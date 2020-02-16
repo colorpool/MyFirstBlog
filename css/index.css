@@ -361,6 +361,13 @@ canvas,
   -ms-animation: scroll-down-effect 1.5s infinite;
   animation: scroll-down-effect 1.5s infinite;
 }
+.avatar-img {
+  -webkit-animation: avatar_turn_around 2s linear infinite;
+  -moz-animation: avatar_turn_around 2s linear infinite;
+  -o-animation: avatar_turn_around 2s linear infinite;
+  -ms-animation: avatar_turn_around 2s linear infinite;
+  animation: avatar_turn_around 2s linear infinite;
+}
 .reward-main {
   -webkit-animation: donate_effcet 0.3s 0.1s ease both;
   -moz-animation: donate_effcet 0.3s 0.1s ease both;
@@ -1234,6 +1241,8 @@ canvas,
   color: #90a4ae;
   font-size: 14px;
   line-height: 20px;
+  counter-reset: line;
+  white-space: pre-wrap;
 }
 .code-area-wrap {
   position: relative;
@@ -1295,6 +1304,15 @@ blockquote footer cite:before {
 .article-container .highlight .line::selection {
   background: rgba(128,203,196,0.251);
   color: #90a4ae;
+}
+.article-container .highlight .line:before {
+  display: inline-block;
+  padding: 0 0.3rem 0 0;
+  min-width: 1.6rem;
+  color: #cfd8dc;
+  content: counter(line);
+  counter-increment: line;
+  text-align: left;
 }
 .article-container .highlight .line.marked {
   background-color: rgba(128,203,196,0.251);
